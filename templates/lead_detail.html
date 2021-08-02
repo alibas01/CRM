@@ -18,7 +18,8 @@
   </head>
   <body>
   <a href="/leads">Go Back to Leads</a>
-  <a href="/leads/{{lead.pk}}/update">Edit the Lead</a>
+  <hr />
+  <hr />
     <h1>Lead Information</h1>
     <ul>
       <li class="lead">
@@ -32,6 +33,8 @@
       <li class="lead">
       Responsible Agent: {{lead.agent}} </li>
     </ul>
-
+    <hr />
+    <a href="/leads/{{lead.pk}}/update">Edit</a>
+    <a href="/leads/{{lead.pk}}/delete">Delete</a>
   </body>
 </html>
