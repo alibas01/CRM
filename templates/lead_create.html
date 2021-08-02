@@ -20,7 +20,7 @@
     </style>
   </head>
   <body>
-    <a href="/leads">Go Back to Leads</a>
+    <a href="{% url 'leads:lead-list' %}">Go Back to Leads</a>
     <h1>Create Lead:</h1>
     <form action="." method="POST">
       {% csrf_token %}

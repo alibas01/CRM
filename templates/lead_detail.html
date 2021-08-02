@@ -17,7 +17,7 @@
       </style>
   </head>
   <body>
-  <a href="/leads">Go Back to Leads</a>
+  <a href="{% url 'leads:lead-list' %}">Go Back to Leads</a>
   <hr />
   <hr />
     <h1>Lead Information</h1>
@@ -34,7 +34,7 @@
       Responsible Agent: {{lead.agent}} </li>
     </ul>
     <hr />
-    <a href="/leads/{{lead.pk}}/update">Edit</a>
-    <a href="/leads/{{lead.pk}}/delete">Delete</a>
+    <a href="{% url 'leads:lead-update' lead.pk %}">Edit</a>
+    <a href="{% url 'leads:lead-delete' lead.pk %}">Delete</a>
   </body>
 </html>

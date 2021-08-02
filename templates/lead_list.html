@@ -20,13 +20,13 @@
       </style>
   </head>
   <body>
-    <a href="create/">Create a new Lead</a>
+    <a href="{% url 'leads:lead-create' %}">Create a new Lead</a>
     <hr />
     <h1>Lead List</h1>
     <h3>This is all our leads: </h3>
     <ul>
       {% for lead in leads %}
-      <a href="{{lead.pk}}/"><li class="lead">{{lead}} </a> // Source: {{lead.source}}  </li>
+      <a href="{% url 'leads:lead-detail' lead.pk %}"><li class="lead">{{lead}} </a> // Source: {{lead.source}}  </li>
       {% endfor %}
     </ul>
 
