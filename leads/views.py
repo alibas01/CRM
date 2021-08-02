@@ -50,3 +50,18 @@ def lead_create(request):
       return redirect('/leads')
   context = {"form":form}
   return render(request, 'lead_create.html', context)
+
+def lead_update(request, pk):
+  lead = Lead.objects.get(id=pk)
+  form = LeadModelForm(instance=lead)
+  if request.method == 'POST':
+    print('receiving a post request')
+    form = LeadModelForm(request.POST, instance=lead)
+    if form.is_valid():
+      print('form is valid')
+      print(form.cleaned_data)
+      form.save()
+      print('Lead has updated')
+      return redirect('/leads')
+  context = {"form":form, "lead":lead}
+  return render(request, 'lead_update.html', context)
